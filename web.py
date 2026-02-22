@@ -74,19 +74,15 @@ if mode == "🎥 Webcam Thời gian thực":
         return av.VideoFrame.from_ndarray(annotated_frame, format="bgr24")
 
     webrtc_streamer(
-    key="cat-detector",
-    rtc_configuration=RTC_CONFIGURATION,
-    video_frame_callback=video_frame_callback,
-    media_stream_constraints={
-        "video": {
-            "width": {"ideal": 320, "max": 640}, # Giảm độ phân giải xuống 320p cho nhẹ
-            "frameRate": {"ideal": 10, "max": 15}, # Giảm FPS xuống để tránh lag
-            "facingMode": "environment",
+        key="cat-live",
+        rtc_configuration=RTC_CONFIGURATION,
+        video_frame_callback=video_frame_callback,
+        media_stream_constraints={
+            "video": {"width": {"ideal": 640}, "facingMode": "environment"},
+            "audio": False
         },
-        "audio": False,
-    },
-    async_processing=True,
-)
+        async_processing=True,
+    )
 
 # --- CHỨC NĂNG 2: CHỤP ẢNH & TẢI FILE ---
 else:
@@ -119,3 +115,4 @@ st.markdown("""
     </style>
 
     """, unsafe_allow_html=True)
+
