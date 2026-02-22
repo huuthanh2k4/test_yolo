@@ -1,7 +1,7 @@
-streamlit==1.31.0
-streamlit-webrtc==0.47.1
+streamlit
+streamlit-webrtc
 ultralytics
-av==11.0.0
+av
 opencv-python-headless
 torch --index-url https://download.pytorch.org/whl/cpu
 torchvision --index-url https://download.pytorch.org/whl/cpu
