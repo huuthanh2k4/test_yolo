@@ -4,4 +4,5 @@ ultralytics
 av
 opencv-python-headless
 torch
+
 torchvision
